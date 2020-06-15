@@ -28,8 +28,7 @@ namespace NetnsAgent
             {
                 output = "ps aux".Bash();
             }
-            // write to output more - Signing test
-            Console.WriteLine(output);
+            // Console.WriteLine(output);
         }
     }
 }
