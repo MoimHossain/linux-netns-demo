@@ -28,7 +28,7 @@ namespace NetnsAgent
             {
                 output = "ps aux".Bash();
             }
-            // write to output
+            // write to output more
             Console.WriteLine(output);
         }
     }
