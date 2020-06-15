@@ -1,4 +1,4 @@
-﻿using NetnsAgent.Models;
+using NetnsAgent.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ namespace NetnsAgent
             {
                 output = "ps aux".Bash();
             }
-            // Console.WriteLine(output);
+            Console.WriteLine(output);
         }
     }
 }
