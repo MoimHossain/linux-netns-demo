@@ -11,24 +11,24 @@ namespace NetnsAgent
     {
         static void Main(string[] args)
         {
-            var output = string.Empty;
-            if(args != null && args.Length > 0)
+            // var output = "ip -j -n red link".Bash();
+
+            var output = "ip -j -n red addr".Bash();
+
+            var links = JsonConvert.DeserializeObject<List<IPLink>>(output);
+
+            //Console.WriteLine(output);
+            foreach(var link in links)
             {
-                output = string.Concat(args.Select(s=> string.Format($" {s}"))).Bash();
+                Console.WriteLine($"# {link.Ifname} {link.Ifindex} {link.Link} {link.Linkmode} {link.Address} {link.Broadcast}");
 
-                var links = JsonConvert.DeserializeObject<List<IPLink>>(output);
-
-                int lineNo = 0;
-                foreach(var link in links)
-                {
-                    Console.WriteLine($"Line no: {link.Ifname} {link.Ifindex} {link.Link} {link.Linkmode} {link.Address} {link.Broadcast}");
+                if(link.AddrInfo != null) {
+                    foreach(var addr in link.AddrInfo) {
+                        Console.WriteLine($"{addr.Label} = {addr.Local}");
+                    }
                 }
             }
-            else
-            {
-                output = "ps aux".Bash();
-            }
-            Console.WriteLine(output);
+            // Console.WriteLine(output);
         }
     }
 }
