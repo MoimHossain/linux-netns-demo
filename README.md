@@ -4,7 +4,8 @@ A simple demo application on Linux Network Namespace
 
 # Ubuntu 20 on Azure
 
-Steps
+# Steps
+
 ## Install .net framework
 ```
 wget https://packages.microsoft.com/config/ubuntu/21.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
