@@ -45,5 +45,8 @@ namespace NetnsAgent.Models
 
         [JsonProperty("link")]
         public object Link { get; set; }
+
+        [JsonProperty("addr_info")]
+        public List<AddrInfo> AddrInfo { get; set; }
     }
 }
